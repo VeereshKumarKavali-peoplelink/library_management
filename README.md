@@ -28,8 +28,8 @@ mongoConnString=""
 -> validation.js file uses "joi" package to validate user & book respectively
 
 # models folder contains
--> bookSchema which has fields like title (book name), author (author name), description, pages, available, createdAt, updatedAt
--> userSchema which has fields like email, password of a user
+-> bookSchema which has fields like title (book name), author (author name), description, genre, pages, available, createdAt, updatedAt
+-> userSchema which has fields like name, email, password of a user
 
 # routes folder contains
 -> userRoutes file which routes to Authentication API's through validation Middleware
@@ -45,6 +45,7 @@ mongoConnString=""
 
 # install Extension → REST Client (by Huachao Mao)
 -> From api.http file to send request for below API's with sample data
+
 POST http://localhost:3000/api/users/register
 
 POST http://localhost:3000/api/users/login
