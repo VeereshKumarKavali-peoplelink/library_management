@@ -1,0 +1,77 @@
+@baseUrl=http://localhost:3000
+@jwtToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0YjlkYjdlLTA1YWItNDM0Mi04M2MwLTI3YzdkMmQ2Yjk4ZiIsImVtYWlsIjoidmVlcmVzaEBnbWFpbC5jb20iLCJpYXQiOjE3NjU2ODM4MzEsImV4cCI6MTc2NTY4NzQzMX0.dDpq0Or4AYTli4-tghA6XHomzV5cNCUi_Pqc50Mso3A
+
+### Register User
+POST {{baseUrl}}/api/users/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Veeresh",
+  "email": "veeresh@gmail.com",
+  "password": "Veeresh@12345"
+}
+
+###
+
+### Login User
+POST {{baseUrl}}/api/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "veeresh@gmail.com",
+  "password": "Veeresh@12345"
+}
+
+###
+
+### Create Book
+POST {{baseUrl}}/api/books
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "title": "Gitanjali",
+  "author": "Rabindranath Tagore",
+  "description": "A collection of deeply spiritual poems about God, nature, love, and the human soul.",
+  "genre": "Spiritual",
+  "pages": 130
+}
+
+###
+
+### Get All Books (Pagination)
+GET {{baseUrl}}/api/books?page=1&limit=10
+Accept: application/json
+
+###
+
+### Search Book by Author
+GET {{baseUrl}}/api/books/author?search=Rabindranath%20Tagore
+Accept: application/json
+
+###
+
+### Update Book
+PUT {{baseUrl}}/api/books/693e3296e4188b7b49dfb750
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "title": "2 States",
+  "author": "Chetan Bhagat",
+  "description": "A love story between a Punjabi boy and a Tamil girl, dealing with cultural differences and family acceptance.",
+  "genre": "Drama",
+  "pages": 270,
+  "available": true
+}
+
+###
+
+### Delete Book
+DELETE {{baseUrl}}/api/books/693e3296e4188b7b49dfb750
+Accept: application/json
+Authorization: Bearer {{jwtToken}}
