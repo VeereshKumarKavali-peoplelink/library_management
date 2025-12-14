@@ -4,7 +4,7 @@
 
 # .env file contains
 PORT=3000
-JWT_SECRET=""
+JWT_SECRET="SECRET_KEY"
 libraryUserTable=user
 libraryBookTable=book
 mongoConnString=""
