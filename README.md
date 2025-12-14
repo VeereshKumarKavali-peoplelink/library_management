@@ -44,7 +44,7 @@ mongoConnString=""
 # dbQueries file has optimized re-usable database queries
 
 # install Extension → REST Client (by Huachao Mao)
--> api.http file to send request for below API's with sample data
+-> From api.http file to send request for below API's with sample data
 POST http://localhost:3000/api/users/register
 
 POST http://localhost:3000/api/users/login
